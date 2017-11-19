@@ -1,18 +1,13 @@
 package app;
 
-import static constants.Constants.URL;
-import static constants.Constants.WEB_DRIVER;
-import static utils.PropertiesManager.getProperty;
-
+import modules.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-
-import modules.BrowserFactory;
-import modules.LoginPage;
-import modules.MainPage;
-import modules.TimeSheetPage;
-import modules.UploadDoc;
 import utils.PropertiesManager;
+
+import static constants.Constants.URL;
+import static constants.Constants.WEB_DRIVER;
+import static utils.PropertiesManager.*;
 
 public class AppRun {
 

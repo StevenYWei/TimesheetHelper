@@ -1,6 +1,13 @@
 # TimesheetHelper
 ## Purpose
 This application is used to fill in the time sheet for a specific timesheet system.
+## Environment
+This application can be run in macOS 10.13.1 (64 bit) and Windows 10 (64 bit).
+## Web Driver Version
+- chromedriver(for mac): 2.33
+- chromedriver.exe (for windows 64 bit): 2.33
+* geckodriver (for mac): 0.19.1
+* geckodriver.exe (fro windows 64 bit): 0.19.1
 ##  Usage Steps
 1. Clone the repo to your local.
 2. Find the _**application.properties**_ file in the resource folder /src/main/resources.
@@ -12,7 +19,8 @@ This application is used to fill in the time sheet for a specific timesheet syst
    - comment (The comment for the time entered)
    - fileName (The file name of the timesheet to be upload)
 4. Copy the time sheet file under the root directory of the foler, like _**TimesheetHelper/timesheet.pdf**_
-5. Run the TimesheetHelper through AppRun class main method.
+5. Make sure you have proper version of browser installed.
+6. Run the TimesheetHelper through AppRun class main method.
 
 ## 
 If you have any question, feel free to contact me:smiley:

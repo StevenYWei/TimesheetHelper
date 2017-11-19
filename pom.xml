@@ -8,15 +8,9 @@
 
 	<properties>
 		<selenium.version>3.4.0</selenium.version>
-		<chrome.driver.version>3.4.0</chrome.driver.version>
 	</properties>
 	
 	<dependencies>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-chrome-driver</artifactId>
-			<version>${chrome.driver.version}</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
