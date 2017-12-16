@@ -42,7 +42,8 @@ public class UploadDoc {
 	@FindBy(how = How.XPATH, using = "//span[@class='ruUploadProgress ruUploadSuccess']")
 	private WebElement progressAndSuccess;
 
-	@FindBy(how = How.ID, id = "mainContent_btnSubmit")
+//	@FindBy(how = How.ID, id = "mainContent_btnSubmit")
+	@FindBy(how = How.XPATH, using = "//div[@class='timesbtn-div']/div[@class='pt-btn-div']/input[@value='Submit'][@type='submit']")
 	private WebElement submitAll;
 
 	public UploadDoc(WebDriver webDriver) {
@@ -87,7 +88,8 @@ public class UploadDoc {
 		upLoadTimeSheet();
 
 		// TODO only enable when it's time to submit timesheet
-		// submitAll.click();
+//		System.out.println(submitAll.isEnabled());
+//		submitAll.click();
 
 	}
 
