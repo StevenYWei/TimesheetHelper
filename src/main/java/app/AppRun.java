@@ -18,7 +18,7 @@ public class AppRun {
 	static UploadDoc uploadDoc;
 
 	static {
-		PropertiesManager pm = new PropertiesManager();
+		new PropertiesManager();
 		webDriver = BrowserFactory.getBrowserDriver(getProperty(WEB_DRIVER), getProperty(URL));
 
 		login = PageFactory.initElements(webDriver, LoginPage.class);

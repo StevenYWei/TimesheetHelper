@@ -42,7 +42,7 @@ public class UploadDoc {
 	@FindBy(how = How.XPATH, using = "//span[@class='ruUploadProgress ruUploadSuccess']")
 	private WebElement progressAndSuccess;
 
-//	@FindBy(how = How.ID, id = "mainContent_btnSubmit")
+	// @FindBy(how = How.ID, id = "mainContent_btnSubmit")
 	@FindBy(how = How.XPATH, using = "//div[@class='timesbtn-div']/div[@class='pt-btn-div']/input[@value='Submit'][@type='submit']")
 	private WebElement submitAll;
 
@@ -66,10 +66,14 @@ public class UploadDoc {
 			description.sendKeys(comment);
 			System.out.println("Filled description");
 
-			selectFile.isEnabled();
-			System.out.println("The file absolute path is" + System.lineSeparator() + getFileAbsolutePath(fileName));
-			selectFile.sendKeys(getFileAbsolutePath(fileName));
-			System.out.println("Select a file to upload");
+			if (selectFile.isEnabled()) {
+				System.out.println("The file absolute path is" + System.lineSeparator() + getFileAbsolutePath(fileName));
+				selectFile.clear();
+				selectFile.sendKeys(getFileAbsolutePath(fileName));
+				System.out.println("Selected a file to be uploaded");
+			} else {
+				System.out.println("Select file area is not enabled");
+			}
 
 			// Wait for file to upload
 			WebDriverWait wait = new WebDriverWait(webDriver, waitTime);
@@ -82,13 +86,13 @@ public class UploadDoc {
 
 	public void fillCommentAndUploadFile() {
 
-		fillComment();
-
-		System.out.println("Upload time sheet is not yet uplaod.");
 		upLoadTimeSheet();
-
+		
+		this.webDriver.navigate().refresh();
+		
+		fillComment();
+		
 		// TODO only enable when it's time to submit timesheet
-//		System.out.println(submitAll.isEnabled());
 //		submitAll.click();
 
 	}
